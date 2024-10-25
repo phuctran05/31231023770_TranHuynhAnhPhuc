@@ -8,10 +8,7 @@ namespace _31231023770_TranHuynhAnhPhuc
 {
     internal class Session03
     {
-        public static void Main()
-        {
-            Ex01();
-        }
+        
 
         /// <summary>
         /// convert from degrees Celsius to Kelvin and Fahrenheit
