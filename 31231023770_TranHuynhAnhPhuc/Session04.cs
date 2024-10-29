@@ -384,6 +384,7 @@ namespace _31231023770_TranHuynhAnhPhuc
                 if (x % i == 0)
                 {
                     prime = false;
+                    break;
                 }
             }
             if (!prime)
