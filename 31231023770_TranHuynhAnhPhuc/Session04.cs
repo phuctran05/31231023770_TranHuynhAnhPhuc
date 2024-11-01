@@ -14,10 +14,7 @@ namespace _31231023770_TranHuynhAnhPhuc
 {
     internal class Session04
     {
-        public static void Main()
-        {
-            Ex00();
-        }
+       
 
         /// <summary>
         /// to display certain values of the function x = y2 + 2y + 1
