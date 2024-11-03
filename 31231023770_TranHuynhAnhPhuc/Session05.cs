@@ -92,7 +92,7 @@ namespace _31231023770_TranHuynhAnhPhuc
             Console.WriteLine("Prime numbers:");
             Console.WriteLine(string.Join(", ", primeNum)); */
 
-        static List<int> Prime01(int start, int end)
+        static List<int> Prime(int start, int end)
         {
             var list = new List<int>();
             for (int i = start +1 ; i < end; i++)
@@ -120,14 +120,14 @@ namespace _31231023770_TranHuynhAnhPhuc
         /// </summary>
         /// <param name="n"></param>
         /// <returns></returns>
-        static List<int> Prime02(int n)
+        static void firstNPrime(int n)
         {
-            var list = new List<int>();
-            for (int i = 2; list.Count < n ; i++)
-            {
+            int count = 0;
 
+            for (int i = 2; count < n; i++)
+            {
                 bool prime = true;
-                for (int j = 1; j <= i; j++)
+                for (int j = 2; j < i; j++)
                 {
                     if (i % j == 0)
                     {
@@ -137,17 +137,76 @@ namespace _31231023770_TranHuynhAnhPhuc
                 }
                 if (prime)
                 {
-                    list.Add(i);
+                    count++;
+                    Console.WriteLine(i + " ");
                 }
-                return list;
+               
+            }
         }
+
+        /// <summary>
+        /// Question 5
+        /// </summary>
+        /// <param name="n"></param>
+        static void Perfect (int n)
+        {
+            for (int i = 1; i < n; i++)
+            {
+                int sum = 0;
+                int j = 1;
+                while (j < i)
+                {
+                    if (i % j == 0)
+                    {
+                        sum += j;
+                    }
+                    j++;
+                }
+                if (i == sum)
+                {
+                    Console.WriteLine(i + " ");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Question 6
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        static int Pangram(string s)
+        {
+            int value = 0;
+            s = s.ToLower();
+            string alphabet = "abcdefghijklmnopqrstuvwxyz";
+            foreach (char k in alphabet)
+            {
+                if (!s.Contains(k))
+                {
+                    value = 0;
+                }
+                else
+                {
+                    value = 1;
+                }
+            }
+            return value;
+        }
+
 
         static void Main(string[] args)
         {
-            int n = int.Parse(Console.ReadLine());
-                List<int> primeNum = Prime02(n);
-                Console.WriteLine("Prime numbers:");
-                Console.WriteLine(string.Join(", ", primeNum));
+            string s = Console.ReadLine();
+            int pangram = Pangram(s);
+            if (pangram == 1)
+            {
+                Console.WriteLine("Pangram");
             }
+            else
+            {
+                Console.WriteLine("Not a pangram");
+            }
+
+        }
     }
 }
