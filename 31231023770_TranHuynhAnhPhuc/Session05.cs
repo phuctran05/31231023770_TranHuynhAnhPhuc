@@ -10,8 +10,6 @@ namespace _31231023770_TranHuynhAnhPhuc
     internal class Session05
     {
 
-
-
         /// <summary>
         /// Question 1
         /// </summary>
@@ -194,19 +192,6 @@ namespace _31231023770_TranHuynhAnhPhuc
         }
 
 
-        static void Main(string[] args)
-        {
-            string s = Console.ReadLine();
-            int pangram = Pangram(s);
-            if (pangram == 1)
-            {
-                Console.WriteLine("Pangram");
-            }
-            else
-            {
-                Console.WriteLine("Not a pangram");
-            }
-
-        }
+       
     }
 }
