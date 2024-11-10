@@ -10,18 +10,7 @@ namespace _31231023770_TranHuynhAnhPhuc
 {
     internal class Session06
     {
-        static void Main(string[] args)
-        {
-            Random r = new Random();
-            int[] arr = new int[10];
-            for (int i = 0; i < arr.Length; i++) 
-            {
-                arr[i] = r.Next(101);
-                Console.Write(arr[i] + " ");
-            }
-            Console.WriteLine();
-           
-        }
+      
 
         static void IncreaseByAdding2(int[] arr)
         {
@@ -109,6 +98,76 @@ namespace _31231023770_TranHuynhAnhPhuc
             return arr;
         }
 
+        static int FindDuplicateVal(int[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[j] == arr[i])
+                       
+                    return arr[i];
+                }
+            return -1;
+        }
 
+        static int[] RemoveDuplicates(int[] arr)
+        {
+            int duplicateVal = FindDuplicateVal(arr);
+
+            while (duplicateVal != -1)
+            {
+                arr = Remove(arr, duplicateVal);
+                duplicateVal = FindDuplicateVal(arr); 
+            }
+            return arr;
+        }
+
+        static int[] BubbleSort(int[] arr)
+        {
+            for (int i = 0; i < arr.Length -1;i++)
+            {
+                for (int j = i +1; j < arr.Length; j++)
+                {
+                    if (arr[j] < arr[i])
+                    {
+                        int temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+
+        static void Main(string[] args)
+        {
+            Random r = new Random();
+            int[] arr = new int[10];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = r.Next(101);
+                Console.Write(arr[i] + " ");
+            }
+            Console.WriteLine();
+        }
+
+        static bool LinerSearch(string sentence, string word)
+        {
+            string wordInSentence = "";
+            bool find = false;
+            for (int i = 0; i < sentence.Length; i++)
+            {
+                if (sentence[i] != ' ')
+                {
+                    wordInSentence += sentence[i];
+                }
+                if (sentence[i] == ' ' || i == sentence.Length - 1)
+                {
+                    if (wordInSentence == word) { find = true; break; }
+                    else { wordInSentence = ""; }
+                }
+            }
+            return find;
+        }
     }
 }
