@@ -139,18 +139,7 @@ namespace _31231023770_TranHuynhAnhPhuc
             return arr;
         }
 
-        static void Main(string[] args)
-        {
-            Random r = new Random();
-            int[] arr = new int[10];
-            for (int i = 0; i < arr.Length; i++)
-            {
-                arr[i] = r.Next(101);
-                Console.Write(arr[i] + " ");
-            }
-            Console.WriteLine();
-        }
-
+       
         static bool LinerSearch(string sentence, string word)
         {
             string wordInSentence = "";
@@ -169,5 +158,6 @@ namespace _31231023770_TranHuynhAnhPhuc
             }
             return find;
         }
+
     }
 }
